@@ -1435,7 +1435,7 @@ int main(int argc, const char * argv[]) {
 		} else if (pid) { /* The parent */
 
 #ifdef SYSTEMD
-			proxy_info("Systemd sd_notify enabled");
+			proxy_info("Systemd sd_notify enabled\n");
 			sd_notifyf(0, "READY=1\n"
 			"STATUS=ProxySQL is now processing requests...");
 #endif
@@ -1500,7 +1500,7 @@ gotofork:
 	} else {
 		GloAdmin->flush_error_log();
 #ifdef SYSTEMD
-		proxy_info("Systemd sd_notify enabled");
+		proxy_info("Systemd sd_notify enabled\n");
 		sd_notifyf(0, "READY=1\n"
 		"STATUS=ProxySQL is now processing requests...");
 #endif
